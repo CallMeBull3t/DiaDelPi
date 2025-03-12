@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia del Pi</title>
+  </head>
+  <body class="bg-stone-900 text-white">
+    <header
+      class="flex absolute top-0 left-1/2 -translate-x-1/2 container z-2 justify-center sm:p-4 max-sm:p-2 text-black"
+    >
+      <nav class="w-full bg-white flex justify-center rounded p-2">
+        <div class="flex gap-5">
+          <button
+            type="button"
+            class="cursor-pointer hover:-translate-y-0.5 hover:shadow-md py-1 px-3 rounded transition"
+          >
+            Inicio
+          </button>
+          <button
+            type="button"
+            class="cursor-pointer hover:-translate-y-0.5 hover:shadow-md py-1 px-3 rounded transition"
+          >
+            Información
+          </button>
+          <button
+            type="button"
+            class="cursor-pointer hover:-translate-y-0.5 hover:shadow-md py-1 px-3 rounded transition"
+          >
+            Juegos
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="h-dvh">
+      <!-- Hero section -->
+      <section
+        class="flex max-sm:flex-col pt-20 h-full bg-[url(/public/Fondo.jpg)] bg-cover bg-center relative"
+      >
+        <!-- Black layer -->
+        <div class="absolute inset-0 bg-black/80"></div>
+
+        <div class="flex-1 flex flex-col justify-center z-1 px-10">
+          <h1 class="text-5xl max-sm:text-3xl max-sm:text-center font-bold">Feliz día del número Pi</h1>
+          <p class="sm:p-3">
+            El Día de Pi se celebra el 14 de marzo en honor al número matemático
+            <span>&pi;</span> (pi), que representa la relación entre la
+            circunferencia y el diámetro de un círculo. Esta fecha es una
+            oportunidad para promover las matemáticas con actividades y
+            desafíos. La celebración es popular en escuelas y comunidades
+            científicas, destacando la importancia de <span>&pi;</span> en
+            diversas áreas del conocimiento.
+          </p>
+        </div>
+        <div class="flex-1 flex items-center justify-center z-1">
+          <p class="text-[20vw] max-sm:text-[250px]">&pi;</p>
+        </div>
+      </section>
+
+      <!-- Informations -->
+
+      <section class="p-3 flex flex-col gap-5">
+        <h2 class="text-2xl font-semibold">Informaciones</h2>
+
+        <!-- Information cards -->
+        <div
+          class="bg-white p-3 rounded shadow-md border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition text-black"
+        >
+          <h3 class="text-xl font-semibold text-blue-400">¿Qué es?</h3>
+          <p>
+            El número <span>&pi;</span> es una constante matemática que
+            representa la relación entre la circunferencia y el diámetro de un
+            círculo. Su valor es aproximadamente 3.14159, pero es un número
+            irracional que tiene infinitas cifras decimales sin un patrón
+            repetitivo. Por esta razón, <span>&pi;</span> es un número
+            fascinante que ha sido estudiado y utilizado en matemáticas, física,
+            ingeniería y otras disciplinas.
+          </p>
+        </div>
+        <div
+          class="bg-white p-3 rounded shadow-md border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition text-black"
+        >
+          <h3 class="text-xl font-semibold text-blue-400">
+            Origen y Descubrimiento
+          </h3>
+          <p>
+            Su uso se remonta a civilizaciones antiguas como los babilonios y
+            egipcios, quienes ya tenían aproximaciones de Pi hace más de 4,000
+            años.
+          </p>
+        </div>
+        <div
+          class="bg-white p-3 rounded shadow-md border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition text-black"
+        >
+          <h3 class="text-xl font-semibold text-blue-400">¿Para qué se usa?</h3>
+          <p>
+            Se aplica en matemáticas, física, ingeniería, informática,
+            astronomía y estadísticas. Es fundamental para cálculos en ondas,
+            órbitas planetarias, arquitectura y hasta inteligencia artificial.
+          </p>
+        </div>
+        <div
+          class="bg-white p-3 rounded shadow-md border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition text-black"
+        >
+          <h3 class="text-xl font-semibold text-blue-400">
+            Día Internacional de Pi 🎉
+          </h3>
+          <p>
+            Se celebra el 14 de marzo (3/14) porque coincide con sus primeros
+            dígitos. Es una fecha popular en colegios y universidades, donde se
+            realizan concursos y desafíos matemáticos.
+          </p>
+        </div>
+      </section>
+
+      <div class="relative my-5">
+        <hr class="absolute w-2/3 left-1/2 -translate-x-1/2" />
+      </div>
+
+      <section class="p-3 flex flex-col gap-5">
+        <h2 class="text-2xl font-semibold">Juegos</h2>
+
+        <div
+          class="flex flex-col bg-white text-black p-3 rounded shadow-md"
+          id="game-container"
+        >
+          <div id="game-info">
+            <h3 class="text-xl font-semibold">Adivina el número de Pi</h3>
+            <p>
+              En este juego, debes adivinar los dígitos del pi en orden. Cada
+              vez que aciertas un dígito, avanzas al siguiente. Si te equivocas,
+              pierdes y debes empezar de nuevo. ¿Cuántos dígitos del pi puedes
+              recordar?
+            </p>
+          </div>
+          <button
+            type="button"
+            class="bg-blue-400 text-white py-2 px-4 rounded mt-3 cursor-pointer hover:bg-blue-500 hover:-translate-y-1 transition"
+            onclick="startGame()"
+            id="start-button"
+          >
+            Jugar
+          </button>
+
+          <!-- Pi container -->
+          <div
+            class="flex flex-col items-center gap-3 text-xl font-semibold tracking-[1.5px] opacity-0 hidden transition text-center"
+            id="pi-container"
+          >
+            <span class="font-normal" id="pi-number"
+              >Tienes 15 segundos para memorizar.</span
+            >
+
+            3.1415926535897932384626433
+          </div>
+
+          <!-- Guess input -->
+          <div
+            class="flex flex-col items-center gap-2 w-full opacity-0 hidden"
+            id="guess-container"
+          >
+            <input
+              type="text"
+              class="sm:w-[40%] bg-white py-2 px-4 rounded shadow-md border border-gray-200 outline-none focus:shadow-lg focus:-translate-y-1 transition"
+              id="guess-input"
+              placeholder="Ingrese los números en el orden corrento 1 por 1."
+              autocomplete="off"
+              maxlength="1"
+            />
+            <button
+              type="button"
+              class="p-2 w-24 bg-blue-400 rounded text-white cursor-pointer"
+              id="guess-button"
+            >
+              Enviar
+            </button>
+          </div>
+
+          <!-- Result message -->
+          <h4
+            class="text-xl font-semibold opacity-0 hidden"
+            id="result-message"
+          ></h4>
+        </div>
+      </section>
+    </main>
+
+    <!-- TailwindCSS -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="../games/pi.js"></script>
+  </body>
+</html>
